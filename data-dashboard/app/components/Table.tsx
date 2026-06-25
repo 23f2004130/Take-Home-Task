@@ -13,16 +13,16 @@ const Table = () => {
     const headings = ["S.No", "Country", "Region", "Code", "View Details"]
     
   return (
-    <div className="w-full max-w-4xl mx-auto overflow-x-auto border border-gray-200 rounded-2xl shadow-sm bg-white">
+    <div className="w-full max-w-4xl mx-auto overflow-x-auto border border-border/50 rounded-2xl shadow-2xl bg-card/30 backdrop-blur-md [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-thumb]:bg-white/40 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/60">
       <table className="w-full min-w-[600px] text-left border-collapse">
-        <thead className="border-b border-gray-200 bg-gray-50">
+        <thead className="border-b border-border/30 bg-muted/40">
           <tr>
             {headings.map((heading) => (
-                <th key={heading} className="px-4 py-3 font-semibold text-gray-700 text-sm">{heading}</th>
+                <th key={heading} className="px-4 py-3.5 font-bold text-muted-foreground text-xs uppercase tracking-wider">{heading}</th>
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-100">
+        <tbody className="divide-y divide-border/20">
           {DUMMY_COUNTRIES.map((item, index) => (
             <TableRow
               key={item.code}
