@@ -1,6 +1,7 @@
 import React from 'react'
 import { Details as DetailsType } from '@/types/details_type'
 import PixelSnow from './PixelSnow'
+import Link from 'next/link'
 
 const getDetails = async(code: string) => {
     const res = await fetch(`https://api.restcountries.com/countries/v5/codes.alpha_3/${code.toUpperCase()}?pretty=1`,{
@@ -41,10 +42,10 @@ const Details = async({code}: {code: string}) => {
             {/* Header: Name and Flag */}
             <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-6 mb-2">
                 <div className="flex flex-col gap-2">
-                    <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-none">
+                    <h1 className="text-5xl text-white font-extrabold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-none">
                         {details.names.common}
                     </h1>
-                    <p className="text-base text-muted-foreground">{details.names.official}</p>
+                    <p className="text-base text-4xl">Official Name: {details.names.official}</p>
                 </div>
                 {details.flag?.url_png && (
                     <img 
@@ -91,7 +92,9 @@ const Details = async({code}: {code: string}) => {
                             <div className="flex flex-nowrap overflow-x-auto gap-2 pb-1.5 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-thumb]:bg-white/40 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/60" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-x'}}>
                                 {details.borders.map((border, index) => (
                                     <span key={index} className="flex-shrink-0 bg-accent/10 text-accent text-xs px-2.5 py-1 rounded-full border border-accent/20">
-                                        {border}
+                                       <Link href={`/country/${border.toLowerCase()}`}>
+                                            {border}
+                                       </Link> 
                                     </span>
                                 ))}
                             </div>
