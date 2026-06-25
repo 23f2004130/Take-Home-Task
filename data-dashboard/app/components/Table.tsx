@@ -47,7 +47,6 @@ const Table = () => {
     const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
         if (loading || !hasMore) return;
         const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-        // Trigger load more when scrolled close to the bottom (within 50px)
         if (scrollHeight - scrollTop <= clientHeight + 50) {
             setOffset((prev) => prev + limit);
         }
@@ -74,7 +73,7 @@ const Table = () => {
                             country={item.names?.common}
                             flag={item.flag?.emoji || "🏳️"}
                             region={item.region}
-                            code={item.codes?.alpha_3}
+                            code={item.codes?.alpha_3 || "NA"}
                         />
                     ))}
                     {loading && (
