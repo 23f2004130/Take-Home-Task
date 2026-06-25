@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Search as SearchIcon, SlidersHorizontal, X } from 'lucide-react'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 const search = () => {
     const [query, setQuery] = useState("");
@@ -13,6 +14,44 @@ const search = () => {
     const [tempRegion, setTempRegion] = useState(region);
     const [tempSubRegion, setTempSubRegion] = useState(subregion);
 
+
+    // Changing the url according to query and filters
+    const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    
+    const updateUrl = () => {
+        const param = new URLSearchParams(searchParams.toString());
+
+        if(query.trim()) {
+            param.set('q', query);
+        } else {
+            param.delete('q');
+        }
+
+        if(region !== 'All') {
+            param.set('region', region);
+        } else {
+            param.delete('region');
+        }
+
+        if(subregion !== 'All') {
+            param.set('subregion', subregion);
+        } else {
+            param.delete('subregion');
+        }
+
+        const url = `${pathname}?${param.toString()}`;
+        router.push(url);
+    }
+
+    // Since its client side we can do useeffect
+    useEffect(() => {
+        updateUrl()
+    }, [query, region, subregion]);
+
+
+    // Handle when clicking on the filter icon
     const handleOpenFilters = () => {
         setTempRegion(region);
         setTempSubRegion(subregion);
@@ -30,6 +69,8 @@ const search = () => {
         setTempSubRegion("All");
     };
 
+
+
     // Regions 
     const regions = ['Africa','Americas','Asia','Europe','Oceania']
     const subRegions = ["Northern","Southern","Eastern","Western"]
@@ -45,7 +86,9 @@ const search = () => {
                 <input
                     type="text"
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={(e) => {
+                        setQuery(e.target.value);
+                    }}
                     placeholder="Search countries..."
                     className="w-full text-white rounded-xl border border-border/50 bg-card/30 backdrop-blur-md py-3 pl-11 pr-12 shadow-sm outline-none transition focus:border-primary/50 focus:ring-2 focus:ring-primary/20 placeholder-white/50"
                 />
@@ -79,15 +122,15 @@ const search = () => {
                             }}
                             className="w-full rounded-xl border border-border/50 bg-card/60 px-4 py-2.5 text-sm text-foreground outline-none focus:border-primary/50 focus:bg-card transition"
                         >
-                            <option value="All" className="bg-card text-foreground">All Regions</option>
+                            <option value="All" className="bg-neutral-900 text-white">All Regions</option>
                             {regions.map((region) => (
-                                <option key={region} value={region} className="bg-card text-foreground">{region}</option>
+                                <option key={region} value={region} className="bg-neutral-900 text-white">{region}</option>
                             ))}
                         </select>
                     </div>
 
                     {/* Subregion */}
-                    <div className="flex flex-col gap-1.5">
+                    <div className="flex flex-col gap-1.5 ">
                         <label className="text-sm font-semibold text-muted-foreground">Subregion</label>
                         <select
                             value={tempSubRegion}
@@ -95,9 +138,9 @@ const search = () => {
                             className="w-full rounded-xl border border-border/50 bg-card/60 px-4 py-2.5 text-sm text-foreground outline-none focus:border-primary/50 focus:bg-card transition disabled:opacity-50"
                             disabled={tempRegion === "All"}
                         >
-                            <option className="bg-card text-foreground">All</option>
+                            <option className="bg-neutral-900 text-white">All</option>
                             {subRegions.map((subRegion) => (
-                                <option key={subRegion} value={subRegion} className="bg-card text-foreground">{subRegion}</option>
+                                <option key={subRegion} value={subRegion} className="bg-neutral-900 text-white">{subRegion}</option>
                             ))}
                         </select>
                     </div>
