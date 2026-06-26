@@ -17,18 +17,19 @@ Make sure the following are installed on your machine before running the project
 - **Node.js**
 - **npm**
 - **Git**
-- **Docker** 
-
-
+- **Docker**
 
 ## How to Run
 
 ### Development
-1. Move into main directory:
-    ```bash
-   cd data-dashboard/
-    ```
-2. Create a `.env` file in the root directory and add rest countries API key:
+
+1. Clone the repository and move into the project directory:
+   ```bash
+   git clone https://github.com/23f2004130/Take-Home-Task.git
+   cd Take-Home-Task/data-dashboard
+   ```
+
+2. Create a `.env` file inside `data-dashboard/` and add the REST Countries API key:
    ```env
    REST_COUNTRIES_API_KEY=rc_live_...
    ```
@@ -37,14 +38,17 @@ Make sure the following are installed on your machine before running the project
    REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
    ```
    (I will deprecate the API key in the near future)
+
 3. Install dependencies:
    ```bash
    npm i
    ```
+
 4. Run dev server:
    ```bash
    npm run dev
    ```
+
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
