@@ -10,32 +10,54 @@ This project took me 2 days. Most of my time was spent on UI and design — it's
 - **Infinite Scrolling**: Scroll to dynamically load more country records.
 - **Detailed View**: Access country data via dynamic routes (e.g., `/country/ind`), containing capitals, timezones, and borders.
 
+## Prerequisites
+
+Make sure the following are installed on your machine before running the project:
+
+- **Node.js**
+- **npm**
+- **Git**
+- **Docker** 
+
+```
+
 ## How to Run
 
 ### Development
-1. Move into main directory:
-    ```bash
-   cd data-dashboard/
-    ```
-2. Create a `.env` file in the root directory:
-   ```env
-   NEXT_PUBLIC_REST_COUNTRIES_API_KEY=rc_live_...
-   REST_COUNTRIES_API_KEY=rc_live_...
-   ```
-   **For quick testing, use this .env file**
-   ```env
-   NEXT_PUBLIC_REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
-   REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
-   ```
-   (I will deprecate the API key in the near future)
-3. Install dependencies:
-   ```bash
-   npm i
-   ```
-4. Run dev server:
-   ```bash
-   npm run dev
-   ```
+
+Run the following commands one by one in your terminal:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/23f2004130/Take-Home-Task.git
+
+# 2. Move into the project directory
+cd Take-Home-Task/data-dashboard
+
+# 3. Create a .env file and paste the keys below
+```
+
+Create a file named `.env` inside `data-dashboard/` with this content:
+```env
+REST_COUNTRIES_API_KEY=rc_live_...
+```
+
+**For quick testing, use this .env file:**
+```env
+REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
+```
+(I will deprecate the API key in the near future)
+
+```bash
+# 4. Install dependencies
+npm i
+
+# 5. Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
 
 ### Production & Docker
 To run using Docker & Docker Compose:
