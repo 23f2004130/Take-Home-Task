@@ -15,7 +15,6 @@ export type Details = {
     names: {
         common: string;
         official: string;
-        alternates: string[];
     };
     codes: {
         alpha_2: string;
@@ -25,9 +24,7 @@ export type Details = {
     region: string;
     subregion: string;
     flag: {
-        emoji: string;
         url_png: string;
-        url_svg: string;
     };
     languages: Record<string, string>[];
     area: {
@@ -42,7 +39,5 @@ export type Details = {
     links?: {
         google_maps?: string;
         wikipedia?: string;
-        official?: string;
-        open_street_maps?: string;
     };
 }
