@@ -1,0 +1,96 @@
+.loading-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.loading-card {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(20, 20, 25, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: none;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.spaceship-wrapper {
+  position: relative;
+  will-change: transform;
+  animation: spaceshipFlight 4s ease-in-out infinite;
+}
+
+@keyframes spaceshipFlight {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) rotate(3deg) scale(1.02);
+  }
+}
+
+.thruster-glow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(139, 92, 246, 0) 70%);
+  filter: blur(4px);
+  animation: pulseGlow 0.15s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(0.9);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+.progress-bar-container {
+  width: 100%;
+  max-width: 220px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6, #ec4899);
+  border-radius: 9999px;
+  position: absolute;
+  left: -40%;
+  animation: progressAnimation 1.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes progressAnimation {
+  0% {
+    left: -40%;
+  }
+  100% {
+    left: 100%;
+  }
+}
