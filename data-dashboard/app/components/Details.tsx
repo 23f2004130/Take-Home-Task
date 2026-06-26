@@ -38,6 +38,10 @@ const Details = async({code}: {code: string}) => {
         <PixelSnow/>
         <div className="relative z-10 max-w-2xl mx-auto my-6 p-4 sm:p-6 rounded-2xl bg-card/30 backdrop-blur-md border border-border/50 shadow-2xl text-foreground flex flex-col gap-6"> 
 
+            <Link href="/search" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition w-fit">
+                ← Back
+            </Link>
+
             <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-6 mb-2">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-5xl text-white font-extrabold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-none">
