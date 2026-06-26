@@ -85,7 +85,7 @@ const Details = async({code}: {code: string}) => {
                                     {tz}
                                 </span>
                             ))}
-                        </div>
+                        </div>  
                     </div>
                     {details.borders && details.borders.length > 0 && (
                         <div>

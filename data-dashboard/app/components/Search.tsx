@@ -5,21 +5,32 @@ import { Search as SearchIcon, SlidersHorizontal, X } from 'lucide-react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 const search = () => {
-    const [query, setQuery] = useState("");
-    const [region, setRegion] = useState("All");
-    const [subregion, setSubRegion] = useState("All");
-    const [showFilter, setShowFilter] = useState(false);
-
-    // Temporary states, They store data before clicking on apply
-    const [tempRegion, setTempRegion] = useState(region);
-    const [tempSubRegion, setTempSubRegion] = useState(subregion);
-
-
-    // Changing the url according to query and filters
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
-    
+
+    const [query, setQuery] = useState(() => searchParams.get('q') || "");
+    const [region, setRegion] = useState(() => searchParams.get('region') || "All");
+    const [subregion, setSubRegion] = useState(() => searchParams.get('subregion') || "All");
+    const [showFilter, setShowFilter] = useState(false);
+
+    // Temporary states, They store data before clicking on apply
+    const [tempRegion, setTempRegion] = useState(() => searchParams.get('region') || "All");
+    const [tempSubRegion, setTempSubRegion] = useState(() => searchParams.get('subregion') || "All");
+
+    // Sync state with url parameters on back/forward navigation or initial load
+    useEffect(() => {
+        const urlQuery = searchParams.get('q') || "";
+        const urlRegion = searchParams.get('region') || "All";
+        const urlSubregion = searchParams.get('subregion') || "All";
+
+        setQuery(urlQuery);
+        setRegion(urlRegion);
+        setSubRegion(urlSubregion);
+        setTempRegion(urlRegion);
+        setTempSubRegion(urlSubregion);
+    }, [searchParams]);
+
     const updateUrl = () => {
         const param = new URLSearchParams(searchParams.toString());
 
