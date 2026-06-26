@@ -1,4 +1,5 @@
 'use client'
+import React, { Suspense } from 'react'
 import Search from '../components/Search'
 import Table from '../components/Table'
 import PixelSnow from '../components/PixelSnow'
@@ -18,8 +19,10 @@ const page = () => {
             </h1>
             <p className="text-base text-muted-foreground">Search and filter through the global country database</p>
           </div>
-          <Search />
-          <Table />
+          <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
+            <Search />
+            <Table />
+          </Suspense>
         </div>
       </div>
     </>

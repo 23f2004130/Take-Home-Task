@@ -17,7 +17,7 @@ const getDetails = async(code: string) => {
 const Details = async({code}: {code: string}) => {
     const response = await getDetails(code)
     const details = response.data.objects[0] as DetailsType
-    console.log(details)
+    // console.log(details)
 
     const capitals = details.capitals?.map(c => c.name).join(', ') || 'N/A'
     const languages = details.languages?.map(l => l.name).join(', ') || 'N/A'
