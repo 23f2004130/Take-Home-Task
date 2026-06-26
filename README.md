@@ -2,12 +2,12 @@
 
 A responsive analytics dashboard built using **Next.js**, **React**, **TypeScript**, and **Tailwind CSS** that consumes the Rest Countries API (Public API).
 
-This project took me 2 days. Most of my time was spent on UI and design — it's not the best design, but it's a solid one!
+This project took me 1.5 days. Most of my time was spent on UI and design — it's not the best design, but it's a solid one!
 
 ## Features
 - **Global Search**: Instantly filter countries by name.
 - **Filters**: Filter countries by Region and Subregion. URL parameters sync state (`q`, `region`, `subregion`) to ensure shareable views.
-- **Infinite Scrolling**: Scroll to dynamically load more country records.
+- **Paginated Scrolling**: Scroll to dynamically load more country records.
 - **Detailed View**: Access country data via dynamic routes (e.g., `/country/ind`), containing capitals, timezones, and borders.
 
 ## How to Run
@@ -19,12 +19,10 @@ This project took me 2 days. Most of my time was spent on UI and design — it's
     ```
 2. Create a `.env` file in the root directory:
    ```env
-   NEXT_PUBLIC_REST_COUNTRIES_API_KEY=rc_live_...
    REST_COUNTRIES_API_KEY=rc_live_...
    ```
    **For quick testing, use this .env file**
    ```env
-   NEXT_PUBLIC_REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
    REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
    ```
    (I will deprecate the API key in the near future)
