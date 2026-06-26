@@ -19,7 +19,7 @@ Make sure the following are installed on your machine before running the project
 - **Git**
 - **Docker** 
 
-```
+
 
 ## How to Run
 
@@ -28,14 +28,12 @@ Make sure the following are installed on your machine before running the project
     ```bash
    cd data-dashboard/
     ```
-2. Create a `.env` file in the root directory:
+2. Create a `.env` file in the root directory and add rest countries API key:
    ```env
-   NEXT_PUBLIC_REST_COUNTRIES_API_KEY=rc_live_...
    REST_COUNTRIES_API_KEY=rc_live_...
    ```
    **For quick testing, use this .env file**
    ```env
-   NEXT_PUBLIC_REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
    REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
    ```
    (I will deprecate the API key in the near future)
