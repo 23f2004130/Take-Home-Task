@@ -35,11 +35,9 @@ const Details = async({code}: {code: string}) => {
 
     return (
         <>
-        {/* <div className="pointer-events-none absolute inset-0"> */}
-            <PixelSnow/>
-        {/* </div> */}
+        <PixelSnow/>
         <div className="relative z-10 max-w-2xl mx-auto my-6 p-4 sm:p-6 rounded-2xl bg-card/30 backdrop-blur-md border border-border/50 shadow-2xl text-foreground flex flex-col gap-6"> 
-            {/* Header: Name and Flag */}
+
             <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-6 mb-2">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-5xl text-white font-extrabold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-none">
@@ -56,7 +54,6 @@ const Details = async({code}: {code: string}) => {
                 )}
             </div>
 
-            {/* Stacked Fields mapped dynamically */}
             <div className="flex flex-col gap-3">
                 {fields.map((field) => (
                     <div key={field.label} className="flex items-center gap-3">
@@ -70,7 +67,7 @@ const Details = async({code}: {code: string}) => {
                 ))}
             </div>
 
-            {/* Scrollable: Horizontal & Vertical scroll container */}
+
             <div className="flex flex-col gap-2">
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Timezones & Borders
@@ -103,7 +100,7 @@ const Details = async({code}: {code: string}) => {
                 </div>
             </div>
 
-            {/* Bottom Row Buttons (Map & wiekie) */}
+
             <div className="flex items-center gap-4 border-t border-border/30 pt-4">
                 {details.links?.google_maps && (
                     <a 

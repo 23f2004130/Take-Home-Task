@@ -78,7 +78,7 @@ const search = () => {
     return (
         <div className="relative w-full max-w-4xl mx-auto">
             <div className="relative w-full flex items-center">
-                {/* Search Input */}
+
                 <SearchIcon
                     size={18}
                     className="absolute left-4 text-white/70 z-10 pointer-events-none"
@@ -92,7 +92,7 @@ const search = () => {
                     placeholder="Search countries..."
                     className="w-full text-white rounded-xl border border-border/50 bg-card/30 backdrop-blur-md py-3 pl-11 pr-12 shadow-sm outline-none transition focus:border-primary/50 focus:ring-2 focus:ring-primary/20 placeholder-white/50"
                 />
-                {/* Filter Icon Button Inside Search Input */}
+
                 <button
                     className="absolute right-3 p-1.5 text-white/70 hover:text-white hover:bg-white/10 z-10 rounded-lg transition"
                     onClick={showFilter ? () => setShowFilter(false) : handleOpenFilters}
@@ -101,7 +101,7 @@ const search = () => {
                 </button>
             </div>
 
-            {/* Floating popover */}
+
             {showFilter && (
                 <div className="absolute right-0 mt-2 w-80 bg-card/95 backdrop-blur-md border border-border/50 rounded-2xl shadow-xl z-50 p-6 flex flex-col gap-5 text-foreground animate-in fade-in slide-in-from-top-2 duration-200">
                     <div className="flex justify-between items-center pb-2 border-b border-border/30">
@@ -111,7 +111,7 @@ const search = () => {
                         </button>
                     </div>
 
-                    {/* Region */}
+
                     <div className="flex flex-col gap-1.5">
                         <label className="text-sm font-semibold text-muted-foreground">Region</label>
                         <select
@@ -129,7 +129,7 @@ const search = () => {
                         </select>
                     </div>
 
-                    {/* Subregion */}
+
                     <div className="flex flex-col gap-1.5 ">
                         <label className="text-sm font-semibold text-muted-foreground">Subregion</label>
                         <select
@@ -145,7 +145,7 @@ const search = () => {
                         </select>
                     </div>
 
-                    {/* Footer Actions */}
+
                     <div className="flex gap-3 pt-3 border-t border-border/30 text-sm">
                         <button
                             onClick={handleClear}

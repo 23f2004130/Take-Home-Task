@@ -20,6 +20,7 @@ const Table = () => {
         setHasMore(true);
     }, [query]);
 
+    // Pagination logic
     useEffect(() => {
         const fetchCountries = async () => {
             setLoading(true);
@@ -76,7 +77,6 @@ const Table = () => {
                             key={item.codes?.alpha_3}
                             sNo={index + 1}
                             country={item.names?.common}
-                            flag={item.flag?.emoji || "🏳️"}
                             region={item.region}
                             code={item.codes?.alpha_3 || "NA"}
                         />

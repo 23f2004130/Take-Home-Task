@@ -5,17 +5,16 @@ import Link from 'next/link'
 interface TableRowProps {
   sNo: number;
   country: string;
-  flag: string;
   region: string;
   code: string;
 }
 
-const TableRow = ({ sNo, country, flag, region, code }: TableRowProps) => {
+const TableRow = ({ sNo, country, region, code }: TableRowProps) => {
   return (
     <tr className="border-b border-border/20 hover:bg-muted/20 transition-colors text-foreground">
       <td className="px-4 py-3.5 text-sm text-muted-foreground font-medium">{sNo}</td>
       <td className="px-4 py-3.5 text-sm font-semibold flex items-center gap-2 text-foreground">
-        {/* <span className="text-lg" role="img" aria-label={`Flag of ${country}`}>{flag}</span> */}
+        
         <span>{country}</span>
       </td>
       <td className="px-4 py-3.5 text-sm text-muted-foreground">{region}</td>

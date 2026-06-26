@@ -2,7 +2,7 @@
 
 A responsive analytics dashboard built using **Next.js**, **React**, **TypeScript**, and **Tailwind CSS** that consumes the Rest Countries API (Public API).
 
-This project took me 1.5 days. Most of my time was spent on UI and design — it's not the best design, but it's a solid one!
+This project took me 2 days. Most of my time was spent on UI and design — it's not the best design, but it's a solid one!
 
 ## Features
 - **Global Search**: Instantly filter countries by name.
