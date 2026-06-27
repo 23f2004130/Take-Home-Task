@@ -36,7 +36,7 @@ Make sure the following are installed on your machine before running the project
    ```
    **For quick testing, use this .env file**
    ```env
-   REST_COUNTRIES_API_KEY=rc_live_a89a7715693241c8ab7f63076f032027
+   REST_COUNTRIES_API_KEY=rc_live_8d4e21b34e75407c89e961b8222a55e9
    ```
    (I will deprecate the API key in the near future)
 
