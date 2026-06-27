@@ -2,8 +2,9 @@
 
 A responsive analytics dashboard built using **Next.js**, **React**, **TypeScript**, and **Tailwind CSS** that consumes the Rest Countries API (Public API).
 
-This project took me 2 days. Most of my time was spent on UI and design — it's not the best design, but it's a solid one!
-Demo Video: https://drive.google.com/file/d/1y6t6YdxG6ZHct3bvKbcNYchfizmBjLaC/view?usp=sharing
+This project took me 2 days. Most of my time was spent on UI and design — it's not the best design, but it's a solid one!  
+Demo Video: https://drive.google.com/file/d/1y6t6YdxG6ZHct3bvKbcNYchfizmBjLaC/view?usp=sharing   
+Deployed Link: https://data-dashboard-2wxa46x0m-nithinmyneni010-1553s-projects.vercel.app/search
 
 ## Features
 - **Global Search**: Instantly filter countries by name.
